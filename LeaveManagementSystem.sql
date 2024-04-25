@@ -29,6 +29,36 @@ update LeaveManagementSystem set payOff = 'no Payoff & work from home' where rea
 insert into LeaveManagementSystem(employeeID, dateOfLeave, ReasonOfLeave, numberOfDays)values(5, '2024-06-6', 'maternity', 5);
 alter table LeaveManagementSystem add months varchar(10);
 update LeaveManagementSystem set months = 'inMonths' where reasonOfLeave='maternity';
-
 drop table LeaveManagementSystem;
 select * from LeaveManagementSystem;
+
+
+
+
+create table leaveManagementSystem(
+			employeeID int primary key auto_increment,
+             employeeName varchar(20),
+                contactNumber long,
+                 department varchar(20),
+            dateOfLeave date,
+            reasonOfLeave varchar(20),
+            numberOfDays int,
+            months varchar(20)
+           
+);
+desc leaveManagementSystem;
+
+insert into leaveManagementSystem(employeeID, employeeName, contactNumber, department, dateOfLeave, reasonOfLeave, numberOfDays)values(3556, 'A', 1234567890, 'Devoloper', '2024-04-06', 'Sick', 2);
+
+insert into leaveManagementSystem(employeeName, contactNumber, department, dateOfLeave, reasonOfLeave, numberOfDays)values('B', 1234567891, 'Business Devolopment', '2024-04-23', 'Emergency', 1);
+
+insert into leaveManagementSystem(employeeName, contactNumber, department, dateOfLeave, reasonOfLeave, numberOfDays)values('C', 1233432891, 'Admin', '2024-02-23', 'Maternity', 6);
+
+alter table leaveManagementSystem add months varchar(20);
+
+update leaveManagementSystem set numberOfDays='' where employeeID=3558;
+
+update leaveManagementSystem set months='6 months' where employeeID=3558;
+
+drop table leaveManagementSystem;
+select * from leaveManagementSystem;
