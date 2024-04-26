@@ -60,5 +60,6 @@ update leaveManagementSystem set numberOfDays='' where employeeID=3558;
 
 update leaveManagementSystem set months='6 months' where employeeID=3558;
 
+alter table leaveManagementSystem add endOfLeave date;
 drop table leaveManagementSystem;
 select * from leaveManagementSystem;
