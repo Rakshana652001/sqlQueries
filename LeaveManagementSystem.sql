@@ -42,8 +42,7 @@ create table leaveManagementSystem(
                  department varchar(20),
             dateOfLeave date,
             reasonOfLeave varchar(20),
-            numberOfDays int,
-            months varchar(20)
+            numberOfDays int
            
 );
 desc leaveManagementSystem;
@@ -54,12 +53,18 @@ insert into leaveManagementSystem(employeeName, contactNumber, department, dateO
 
 insert into leaveManagementSystem(employeeName, contactNumber, department, dateOfLeave, reasonOfLeave, numberOfDays)values('C', 1233432891, 'Admin', '2024-02-23', 'Maternity', 6);
 
-alter table leaveManagementSystem add months varchar(20);
-
+alter table leaveManagementSystem add months int;
 update leaveManagementSystem set numberOfDays='' where employeeID=3558;
-
-update leaveManagementSystem set months='6 months' where employeeID=3558;
-
 alter table leaveManagementSystem add endOfLeave date;
+ 
+alter table leaveManagementSystem add emergencyContact long;
+update leaveManagementSystem set numberOfDays=182 where employeeID=3558;
+update leaveManagementSystem set endOfLeave = dateOfLeave+numberOfDays;
+
+update leaveManagementSystem set endOfLeave = dateOfLeave+(6*30) where reasonOfLeave = 'Maternity';
+
+select date_add endOfLeave;
+
+
 drop table leaveManagementSystem;
 select * from leaveManagementSystem;
