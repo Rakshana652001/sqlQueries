@@ -6,13 +6,24 @@ create table leaveManagement(
              employeeName varchar(20) not null,
                 contactNumber long not null,
                 emergencyContact long not null,
-                 department varchar(20) not null,
-            dateOfLeave date not null,
-            reasonOfLeave varchar(20) not null,
-            numberOfDays int not null           
+                 department varchar(20) not null
 );
 
+select * from LeaveManagement;
 
 desc leaveManagement;
+
 drop table leaveManagement;
-select * from LeaveManagement;
+
+
+create table leaveManage(
+	sNo int primary key auto_increment,
+	employeeID int not null,
+     dateOfLeave date,
+            reasonOfLeave varchar(20) ,
+            numberOfDays varchar(20)
+);
+
+desc leaveManage;
+select * from leaveManage;
+drop table leaveManage;
