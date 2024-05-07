@@ -2,14 +2,13 @@ create schema LeaveManagement;
 use LeaveManagement;
 create table leaveManagement(
 			sNo int primary key auto_increment,
-			employeeID int not null,
+			employeeID int unique,
              employeeName varchar(20) not null,
                 contactNumber long not null,
                 emergencyContact long not null,
                  department varchar(20) not null
 );
 
-select * from LeaveManagement;
 
 desc leaveManagement;
 
@@ -25,5 +24,9 @@ create table leaveManage(
 );
 
 desc leaveManage;
-select * from leaveManage;
+
 drop table leaveManage;
+
+
+select * from leaveManagement;
+select * from leaveManage;
